@@ -44,6 +44,11 @@
             this.choice3btn = new System.Windows.Forms.Button();
             this.choice2btn = new System.Windows.Forms.Button();
             this.choice1btn = new System.Windows.Forms.Button();
+            this.timesToRun = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.runSimulationBtn = new System.Windows.Forms.Button();
+            this.yesEveryTime = new System.Windows.Forms.RadioButton();
+            this.noEveryTime = new System.Windows.Forms.RadioButton();
             this.switchPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,9 +56,9 @@
             // startButton
             // 
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(12, 58);
+            this.startButton.Location = new System.Drawing.Point(12, 28);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(117, 108);
+            this.startButton.Size = new System.Drawing.Size(90, 153);
             this.startButton.TabIndex = 2;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
@@ -64,7 +69,7 @@
             this.resultsList.FormattingEnabled = true;
             this.resultsList.Location = new System.Drawing.Point(3, 8);
             this.resultsList.Name = "resultsList";
-            this.resultsList.Size = new System.Drawing.Size(218, 43);
+            this.resultsList.Size = new System.Drawing.Size(218, 147);
             this.resultsList.TabIndex = 6;
             // 
             // activityLog
@@ -72,14 +77,14 @@
             this.activityLog.FormattingEnabled = true;
             this.activityLog.Location = new System.Drawing.Point(227, 8);
             this.activityLog.Name = "activityLog";
-            this.activityLog.Size = new System.Drawing.Size(181, 43);
+            this.activityLog.Size = new System.Drawing.Size(196, 147);
             this.activityLog.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 205);
+            this.label2.Location = new System.Drawing.Point(13, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 24);
             this.label2.TabIndex = 8;
@@ -89,7 +94,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(147, 205);
+            this.label3.Location = new System.Drawing.Point(65, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 24);
             this.label3.TabIndex = 9;
@@ -99,7 +104,7 @@
             // 
             this.wins.AutoSize = true;
             this.wins.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wins.Location = new System.Drawing.Point(96, 238);
+            this.wins.Location = new System.Drawing.Point(26, 228);
             this.wins.Name = "wins";
             this.wins.Size = new System.Drawing.Size(21, 24);
             this.wins.TabIndex = 10;
@@ -109,7 +114,7 @@
             // 
             this.losses.AutoSize = true;
             this.losses.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.losses.Location = new System.Drawing.Point(173, 238);
+            this.losses.Location = new System.Drawing.Point(91, 228);
             this.losses.Name = "losses";
             this.losses.Size = new System.Drawing.Size(21, 24);
             this.losses.TabIndex = 11;
@@ -120,7 +125,7 @@
             this.switchPanel.Controls.Add(this.labelswitch);
             this.switchPanel.Controls.Add(this.choiceNo);
             this.switchPanel.Controls.Add(this.choiceYes);
-            this.switchPanel.Location = new System.Drawing.Point(265, 195);
+            this.switchPanel.Location = new System.Drawing.Point(146, 187);
             this.switchPanel.Name = "switchPanel";
             this.switchPanel.Size = new System.Drawing.Size(247, 100);
             this.switchPanel.TabIndex = 12;
@@ -162,16 +167,16 @@
             // 
             this.panel2.Controls.Add(this.resultsList);
             this.panel2.Controls.Add(this.activityLog);
-            this.panel2.Location = new System.Drawing.Point(201, 306);
+            this.panel2.Location = new System.Drawing.Point(218, 296);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(429, 61);
+            this.panel2.Size = new System.Drawing.Size(440, 165);
             this.panel2.TabIndex = 13;
             // 
             // PickADoor
             // 
             this.PickADoor.AutoSize = true;
             this.PickADoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PickADoor.Location = new System.Drawing.Point(304, 5);
+            this.PickADoor.Location = new System.Drawing.Point(247, 1);
             this.PickADoor.Name = "PickADoor";
             this.PickADoor.Size = new System.Drawing.Size(126, 24);
             this.PickADoor.TabIndex = 3;
@@ -181,7 +186,7 @@
             // choice3btn
             // 
             this.choice3btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.choice3btn.Location = new System.Drawing.Point(458, 36);
+            this.choice3btn.Location = new System.Drawing.Point(379, 28);
             this.choice3btn.Name = "choice3btn";
             this.choice3btn.Size = new System.Drawing.Size(125, 153);
             this.choice3btn.TabIndex = 5;
@@ -191,7 +196,7 @@
             // choice2btn
             // 
             this.choice2btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.choice2btn.Location = new System.Drawing.Point(305, 39);
+            this.choice2btn.Location = new System.Drawing.Point(248, 28);
             this.choice2btn.Name = "choice2btn";
             this.choice2btn.Size = new System.Drawing.Size(125, 153);
             this.choice2btn.TabIndex = 4;
@@ -200,18 +205,76 @@
             // 
             // choice1btn
             // 
-            this.choice1btn.Location = new System.Drawing.Point(151, 36);
+            this.choice1btn.Location = new System.Drawing.Point(117, 28);
             this.choice1btn.Name = "choice1btn";
             this.choice1btn.Size = new System.Drawing.Size(125, 153);
             this.choice1btn.TabIndex = 3;
             this.choice1btn.UseVisualStyleBackColor = true;
             this.choice1btn.Click += new System.EventHandler(this.choice1btn_Click);
             // 
+            // timesToRun
+            // 
+            this.timesToRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timesToRun.Location = new System.Drawing.Point(510, 74);
+            this.timesToRun.Name = "timesToRun";
+            this.timesToRun.Size = new System.Drawing.Size(199, 31);
+            this.timesToRun.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(509, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 25);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Times To Run";
+            // 
+            // runSimulationBtn
+            // 
+            this.runSimulationBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.runSimulationBtn.Location = new System.Drawing.Point(510, 111);
+            this.runSimulationBtn.Name = "runSimulationBtn";
+            this.runSimulationBtn.Size = new System.Drawing.Size(199, 70);
+            this.runSimulationBtn.TabIndex = 16;
+            this.runSimulationBtn.Text = "Run Simulation";
+            this.runSimulationBtn.UseVisualStyleBackColor = true;
+            this.runSimulationBtn.Click += new System.EventHandler(this.runSimulationBtn_Click);
+            // 
+            // yesEveryTime
+            // 
+            this.yesEveryTime.AutoSize = true;
+            this.yesEveryTime.Checked = true;
+            this.yesEveryTime.Location = new System.Drawing.Point(509, 51);
+            this.yesEveryTime.Name = "yesEveryTime";
+            this.yesEveryTime.Size = new System.Drawing.Size(99, 17);
+            this.yesEveryTime.TabIndex = 17;
+            this.yesEveryTime.TabStop = true;
+            this.yesEveryTime.Text = "Yes Every Time";
+            this.yesEveryTime.UseVisualStyleBackColor = true;
+            this.yesEveryTime.CheckedChanged += new System.EventHandler(this.yesEveryTime_CheckedChanged);
+            // 
+            // noEveryTime
+            // 
+            this.noEveryTime.AutoSize = true;
+            this.noEveryTime.Location = new System.Drawing.Point(614, 51);
+            this.noEveryTime.Name = "noEveryTime";
+            this.noEveryTime.Size = new System.Drawing.Size(95, 17);
+            this.noEveryTime.TabIndex = 18;
+            this.noEveryTime.Text = "No Every Time";
+            this.noEveryTime.UseVisualStyleBackColor = true;
+            this.noEveryTime.CheckedChanged += new System.EventHandler(this.noEveryTime_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 299);
+            this.ClientSize = new System.Drawing.Size(738, 289);
+            this.Controls.Add(this.noEveryTime);
+            this.Controls.Add(this.yesEveryTime);
+            this.Controls.Add(this.runSimulationBtn);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.timesToRun);
             this.Controls.Add(this.PickADoor);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.switchPanel);
@@ -251,6 +314,11 @@
         private System.Windows.Forms.Button choiceYes;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label PickADoor;
+        private System.Windows.Forms.TextBox timesToRun;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button runSimulationBtn;
+        private System.Windows.Forms.RadioButton yesEveryTime;
+        private System.Windows.Forms.RadioButton noEveryTime;
     }
 }
 

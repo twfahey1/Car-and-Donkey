@@ -14,6 +14,7 @@ namespace Car_and_Donkey
 {
     public partial class Form1 : Form
     {
+        Random ran = new Random();
 
         bool picking = false;
         int correctDoor;
@@ -51,8 +52,8 @@ namespace Car_and_Donkey
             choice1btn.BackColor = Color.Gray;
             choice2btn.BackColor = Color.Gray;
             choice3btn.BackColor = Color.Gray;
-            activityLog.Items.Clear();
-            resultsList.Items.Clear();
+            //activityLog.Items.Clear();
+            //resultsList.Items.Clear();
             poss1going = false;
             poss2going = false;
             poss3going = false;
@@ -75,27 +76,26 @@ namespace Car_and_Donkey
 
             PickADoor.Visible = true;
 
-            var rndNumber = new Random();
 
-            correctDoor = rndNumber.Next(1, 4);
+            correctDoor = ran.Next(1, 4);
 
             LogActivity("CORRECT DOOR IS: " + correctDoor.ToString());
             if (correctDoor == 1)
             {
                 poss1going = true;
-                LogActivity("THE POSSIBILITY GOING IS: " + poss1going);
+                //LogActivity("THE POSSIBILITY GOING IS: " + poss1going);
 
             }
             else if (correctDoor == 2)
             {
                 poss2going = true;
-                LogActivity("THE POSSIBILITY GOING IS: " + poss2going);
+                //LogActivity("THE POSSIBILITY GOING IS: " + poss2going);
 
             }
             else
             {
                 poss3going = true;
-                LogActivity("THE POSSIBILITY GOING IS: " + poss3going);
+                //LogActivity("THE POSSIBILITY GOING IS: " + poss3going);
 
             }
 
@@ -107,11 +107,10 @@ namespace Car_and_Donkey
         {
             if (poss1going)
             {
-                var furtherRandom = new Random();
-                int doorToReveal = furtherRandom.Next(2, 4);
+                int doorToReveal = ran.Next(2, 4);
                 flippedDoor = doorToReveal;
 
-                LogActivity("The flipped door is: " + flippedDoor.ToString());
+                //LogActivity("The flipped door is: " + flippedDoor.ToString());
                 if (doorChoice == 1)
                 {
                     
@@ -141,10 +140,9 @@ namespace Car_and_Donkey
             }
             else if (poss2going)
             {
-                var furtherRandom = new Random();
-                int doorToReveal = furtherRandom.Next(2, 4);
+                int doorToReveal = ran.Next(2, 4);
                 flippedDoor = doorToReveal;
-                LogActivity("The flipped door is: " + flippedDoor.ToString());
+                //LogActivity("The flipped door is: " + flippedDoor.ToString());
 
                 if (doorChoice == 2)
                 {
@@ -178,8 +176,7 @@ namespace Car_and_Donkey
             }
             else if (poss3going)
             {
-                var furtherRandom = new Random();
-                int doorToReveal = furtherRandom.Next(2, 4);
+                int doorToReveal = ran.Next(2, 4);
                 flippedDoor = doorToReveal;
                 LogActivity("The flipped door is: " + flippedDoor.ToString());
 
@@ -531,6 +528,55 @@ namespace Car_and_Donkey
                 choice2btn.BackgroundImage = Properties.Resources.donkey1;
                 choice1btn.BackgroundImage = Properties.Resources.donkey1;
 
+            }
+        }
+
+        private void runSimulationBtn_Click(object sender, EventArgs e)
+        {
+            runSimluator(Int32.Parse(timesToRun.Text));
+        }
+
+        private void runSimluator(int timesToRun)
+        {
+
+            for (int runtimes = 0; runtimes < timesToRun; runtimes++)
+            {
+                var doorchoice = ran.Next(1, 4);
+                LogActivity("Doorchoice was: " + doorchoice.ToString());
+                userChoice = doorchoice;
+                Simulation_part1();
+                Simulation_part2(userChoice);
+                if (yesEveryTime.Checked)
+                {
+                    choiceYes_Click(this, null);
+
+                }
+                else
+                {
+                    choiceNo_Click(this, null);
+
+                }
+                reset();
+                
+                
+            }
+           
+
+        }
+
+        private void noEveryTime_CheckedChanged(object sender, EventArgs e)
+        {
+            if (noEveryTime.Checked)
+            {
+                yesEveryTime.Checked = false;
+            }
+        }
+
+        private void yesEveryTime_CheckedChanged(object sender, EventArgs e)
+        {
+            if (yesEveryTime.Checked)
+            {
+                noEveryTime.Checked = false;
             }
         }
     }

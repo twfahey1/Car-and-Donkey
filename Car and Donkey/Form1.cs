@@ -283,7 +283,26 @@ namespace Car_and_Donkey
             {
                 playerLoses();
             }
+
+            
+
         }
+
+        private void calculate_winPerc()
+        {
+            int totalRuns = Int32.Parse(wins.Text.ToString()) + Int32.Parse(losses.Text.ToString());
+            int percWinCalc = (Int32.Parse(wins.Text.ToString()) / totalRuns) * 100;
+            winPerc.Text = percWinCalc.ToString();
+            MessageBox.Show("calculating " + percWinCalc);
+        }
+
+        private void calculate_losePerc()
+        {
+            int totalRuns = Int32.Parse(wins.Text.ToString()) + Int32.Parse(losses.Text.ToString());
+            int percLostCalc = (Int32.Parse(losses.Text.ToString()) / totalRuns) * 100;
+            lossPerc.Text = percLostCalc.ToString();
+        }
+
         private void playerWins()
         {
             picking = false;
@@ -292,6 +311,7 @@ namespace Car_and_Donkey
             PickADoor.Text = "YOU WIN!";
             winsCtr += 1;
             wins.Text = winsCtr.ToString();
+
 
             using (var player = new SoundPlayer(Properties.Resources.carstart))
             {
@@ -560,6 +580,9 @@ namespace Car_and_Donkey
                 
                 
             }
+
+            calculate_losePerc();
+            calculate_winPerc();
            
 
         }

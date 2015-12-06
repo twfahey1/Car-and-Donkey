@@ -49,6 +49,8 @@
             this.runSimulationBtn = new System.Windows.Forms.Button();
             this.yesEveryTime = new System.Windows.Forms.RadioButton();
             this.noEveryTime = new System.Windows.Forms.RadioButton();
+            this.winPerc = new System.Windows.Forms.Label();
+            this.lossPerc = new System.Windows.Forms.Label();
             this.switchPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -104,7 +106,7 @@
             // 
             this.wins.AutoSize = true;
             this.wins.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wins.Location = new System.Drawing.Point(26, 228);
+            this.wins.Location = new System.Drawing.Point(27, 219);
             this.wins.Name = "wins";
             this.wins.Size = new System.Drawing.Size(21, 24);
             this.wins.TabIndex = 10;
@@ -114,7 +116,7 @@
             // 
             this.losses.AutoSize = true;
             this.losses.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.losses.Location = new System.Drawing.Point(91, 228);
+            this.losses.Location = new System.Drawing.Point(94, 219);
             this.losses.Name = "losses";
             this.losses.Size = new System.Drawing.Size(21, 24);
             this.losses.TabIndex = 11;
@@ -265,11 +267,33 @@
             this.noEveryTime.UseVisualStyleBackColor = true;
             this.noEveryTime.CheckedChanged += new System.EventHandler(this.noEveryTime_CheckedChanged);
             // 
+            // winPerc
+            // 
+            this.winPerc.AutoSize = true;
+            this.winPerc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winPerc.Location = new System.Drawing.Point(27, 255);
+            this.winPerc.Name = "winPerc";
+            this.winPerc.Size = new System.Drawing.Size(21, 24);
+            this.winPerc.TabIndex = 19;
+            this.winPerc.Text = "0";
+            // 
+            // lossPerc
+            // 
+            this.lossPerc.AutoSize = true;
+            this.lossPerc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lossPerc.Location = new System.Drawing.Point(94, 255);
+            this.lossPerc.Name = "lossPerc";
+            this.lossPerc.Size = new System.Drawing.Size(21, 24);
+            this.lossPerc.TabIndex = 20;
+            this.lossPerc.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 289);
+            this.ClientSize = new System.Drawing.Size(738, 295);
+            this.Controls.Add(this.lossPerc);
+            this.Controls.Add(this.winPerc);
             this.Controls.Add(this.noEveryTime);
             this.Controls.Add(this.yesEveryTime);
             this.Controls.Add(this.runSimulationBtn);
@@ -319,6 +343,8 @@
         private System.Windows.Forms.Button runSimulationBtn;
         private System.Windows.Forms.RadioButton yesEveryTime;
         private System.Windows.Forms.RadioButton noEveryTime;
+        private System.Windows.Forms.Label winPerc;
+        private System.Windows.Forms.Label lossPerc;
     }
 }
 
